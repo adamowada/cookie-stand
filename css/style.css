@@ -41,3 +41,17 @@ h2 {
   display: table;
   clear: both;
 }
+
+body {
+  height: 100%;
+  background: linear-gradient(90deg, #ff8c69 50%, white 50%);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+
