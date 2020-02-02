@@ -31,7 +31,7 @@ CreateCookieStoreLocation.prototype.renderDOM = function() {
   targetLocation.appendChild(locationEl);
   for (let i = 0; i < this.predictSalesInHour().length; i++) {
     var tableEl = document.createElement('td');
-    tableEl.setAttribute('class', i); // sets class for all like times for easy summing
+    tableEl.setAttribute('class', i); // sets class for all like hours for easy summing
     tableEl.textContent = this.predictSalesInHour()[i];
     targetLocation.appendChild(tableEl);
   }
