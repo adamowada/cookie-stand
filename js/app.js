@@ -87,6 +87,32 @@ new CreateCookieStoreLocation('Dubai', 11, 38, 3.7, 6, 20);
 new CreateCookieStoreLocation('Paris', 20, 38, 2.3, 6, 20);
 new CreateCookieStoreLocation('Lima', 2, 16, 4.6, 6, 20);
 
+//for new store functionality look at adding a slider for the opening/closing times. same family as checkbox
+
 renderHeader();
 renderSalesData();
 renderFooter();
+
+
+
+
+function earliestOpeningStore() {
+  var allOpeningTimes = [];
+  for (var i = 0; i < cookieStoreLocations.length; i++) {
+    allOpeningTimes.push(cookieStoreLocations[i].openAt);
+  }
+  return Math.min(...allOpeningTimes);
+}
+
+function latestOpeningStore() {
+  var allClosingTimes = [];
+  for (var i = 0; i < cookieStoreLocations.length; i++) {
+    allClosingTimes.push(cookieStoreLocations[i].closeAt);
+  }
+  return Math.min(...allClosingTimes);
+}
+
+console.log(earliestOpeningStore(), latestOpeningStore());
+
+
+
