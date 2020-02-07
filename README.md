@@ -17,4 +17,4 @@ Thank you to w3schools.com for examples of table headers and footers, .getElemen
 
 Thank you to stack overflow at https://stackoverflow.com/questions/6860213/how-can-i-use-setattribute-to-set-multiple-classes-on-an-element/6860238 for help with .setAttribute method for DOM
 
-Cassandra Ortiz was navigator and Adam Owada was driver for CSS styling of index.html
+Cassandra Ortiz was navigator and Adam Owada was driver for CSS styling of index.html and added pictures
