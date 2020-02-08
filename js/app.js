@@ -116,6 +116,7 @@ renderSalesData();
 renderFooter();
 
 
+
 //Form to create new store:
 var newStoreData = document.getElementById('newStore');
 newStoreData.addEventListener('submit', handleSubmit);
@@ -126,6 +127,11 @@ function handleSubmit(event) {
   var maxCust = event.target.maxCust.value;
   var avgSale = event.target.avgSale.value;
 
+  //form validation
+  if (formValidation(location, minCust, maxCust, avgSale) === false) {
+    return;
+  }
+
   //remove displayed sales data trs and table footer tr
   for (let i = 0; i < cookieStoreLocations.length; i++){
     var tableRow = document.getElementById(cookieStoreLocations[i].location+'Location');
@@ -134,13 +140,41 @@ function handleSubmit(event) {
   var tableRow = document.getElementById('tableFooter');
   tableRow.parentNode.removeChild(tableRow);
   //------------------------
-
   new CreateCookieStoreLocation(location, Number(minCust), Number(maxCust), Number(avgSale), 6, 20);
-  renderSalesData(); // re render the sales data with updated cookieStoreLocations
-  renderFooter(); // re render the footer with updated sales data
+  renderSalesData(); // re-render the sales data with updated cookieStoreLocations
+  renderFooter(); // re-render the footer with updated sales data
 }
 
-
+//form validation function
+function formValidation(location, minCust, maxCust, avgSale) {
+  if (location === '' || minCust === '' || maxCust === '' || avgSale === '') {
+    alert('Please fill out all fields before submiting.');
+    return false;
+  }
+  for (let i = 0; i < cookieStoreLocations.length; i++) {
+    if (cookieStoreLocations[i].location === location) {
+      alert(`You already have a store named ${location} please choose a new name.`);
+      return false;
+    }
+  }
+  if (Number.isInteger(Number(minCust)) === false || Number(minCust) < 1) {
+    alert('For Minimum Customers please enter a whole number greater than 0.');
+    return false;
+  }
+  if (Number.isInteger(Number(maxCust)) === false || Number(maxCust) < 1) {
+    alert('For Maximum Customers please enter a whole number greater than 0.');
+    return false;
+  }
+  if (Number(minCust) > Number(maxCust)) {
+    alert('Please make sure Minimum Customers is less than or equal to Maximum Customers.');
+    return false;
+  }
+  if (Number.isNaN(Number(avgSale)) === true || Number(avgSale) < 1) {
+    alert('For Average Sale please enter a number that is greater than or equal to 1.');
+    return false;
+  }
+  return true;
+}
 
 
 
