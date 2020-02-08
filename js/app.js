@@ -116,6 +116,26 @@ renderSalesData();
 renderFooter();
 
 
+//Form
+//----------
+
+var newStoreData = document.getElementById('newStore');
+newStoreData.addEventListener('submit', handleSubmit);
+function handleSubmit(event) {
+  event.preventDefault();
+  var location = event.target.newStoreName.value;
+  var minCust = event.target.minCust.value;
+  var maxCust = event.target.maxCust.value;
+  var avgSale = event.target.avgSale.value;
+  new CreateCookieStoreLocation(location, Number(minCust), Number(maxCust), Number(avgSale), 6, 20);
+  renderSalesData();
+// console.log(location, minCust, maxCust, avgSale);
+}
+
+
+
+
+
 
 
 // Store hours extra functionality
