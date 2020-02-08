@@ -2,6 +2,7 @@ html {
     background-image: url(/images/logoblack.svg);
     position: cover;
     font-family: 'PT Sans', sans-serif;
+    /* border: green solid 1px; */
 }
 
 header {
