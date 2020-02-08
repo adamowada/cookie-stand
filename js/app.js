@@ -25,7 +25,14 @@ CreateCookieStoreLocation.prototype.predictSalesInHour = function() {
 };
 
 CreateCookieStoreLocation.prototype.renderDOM = function() {
-  var targetLocation = document.getElementById(`${this.location.toLowerCase()}Location`); //TODO make more general instead of relying on html hooks
+  //Automate tr creation:
+  //---------------------
+  var tableLocation = document.getElementById('salesTable'); //tie to table salesTable
+  var tableRow = document.createElement('tr'); // create tr
+  tableRow.setAttribute('id', `${this.location}Location`); // set tr id='(this.location)Location'
+  tableLocation.appendChild(tableRow); // appends tr to salesTable
+  //---------------------
+  var targetLocation = document.getElementById(`${this.location}Location`);
   var locationEl = document.createElement('td');
   locationEl.textContent = this.location;
   targetLocation.appendChild(locationEl);
@@ -38,6 +45,7 @@ CreateCookieStoreLocation.prototype.renderDOM = function() {
 };
 
 function renderSalesData() {
+  // probably need to clear cookStoreLocations array here
   for (var i = 0; i < cookieStoreLocations.length; i++) {
     cookieStoreLocations[i].renderDOM();
   }
@@ -55,6 +63,13 @@ function renderHeader() {
     }
   }
   businessHours.push('Daily Total:');
+  //Automate tr creation:
+  //---------------------
+  var tableLocation = document.getElementById('salesTable'); //tie to table salesTable
+  var tableRow = document.createElement('thead'); // create thead
+  tableRow.setAttribute('id', 'tableHeader'); // set thead id='tableHeader'
+  tableLocation.appendChild(tableRow); // appends thead to salesTable
+  //---------------------
   var headerLocation = document.getElementById('tableHeader');
   for (var j = 0; j < businessHours.length; j++) {
     var headerElement = document.createElement('th');
@@ -72,6 +87,13 @@ function renderFooter() {
     }
     hourlyTotals.push(sum);
   }
+  //Automate tr creation:
+  //---------------------
+  var tableLocation = document.getElementById('salesTable'); //tie to table salesTable
+  var tableRow = document.createElement('tr'); // create tr
+  tableRow.setAttribute('id', 'tableFooter'); // set tr id='tableFooter'
+  tableLocation.appendChild(tableRow); // appends tr to salesTable
+  //---------------------
   var footerLocation = document.getElementById('tableFooter');
   for (var k = 0; k < hourlyTotals.length; k++) {
     var footerElement = document.createElement('td');
@@ -96,6 +118,8 @@ renderFooter();
 
 
 
+// Store hours extra functionality
+/*
 function earliestOpeningStore() {
   var allOpeningTimes = [];
   for (var i = 0; i < cookieStoreLocations.length; i++) {
@@ -113,6 +137,6 @@ function latestOpeningStore() {
 }
 
 console.log(earliestOpeningStore(), latestOpeningStore());
-
+*/
 
 
