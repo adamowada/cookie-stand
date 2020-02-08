@@ -45,7 +45,6 @@ CreateCookieStoreLocation.prototype.renderDOM = function() {
 };
 
 function renderSalesData() {
-  // probably need to clear cookStoreLocations array here
   for (var i = 0; i < cookieStoreLocations.length; i++) {
     cookieStoreLocations[i].renderDOM();
   }
@@ -177,11 +176,7 @@ function formValidation(location, minCust, maxCust, avgSale) {
 }
 
 
-
-
-
 // Store hours extra functionality
-/*
 function earliestOpeningStore() {
   var allOpeningTimes = [];
   for (var i = 0; i < cookieStoreLocations.length; i++) {
@@ -199,6 +194,6 @@ function latestOpeningStore() {
 }
 
 console.log(earliestOpeningStore(), latestOpeningStore());
-*/
+
 
 
