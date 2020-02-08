@@ -18,3 +18,9 @@ Thank you to w3schools.com for examples of table headers and footers, .getElemen
 Thank you to stack overflow at https://stackoverflow.com/questions/6860213/how-can-i-use-setattribute-to-set-multiple-classes-on-an-element/6860238 for help with .setAttribute method for DOM
 
 Cassandra Ortiz was navigator and Adam Owada was driver for CSS styling of index.html and added pictures
+
+Thank you to w3schools.com for help with Number.isNaN for data validation in my form
+
+Thank you to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger for help with Number.isInteger for data validation in my form
+
+Although I ended up writing my own code, thank you to https://www.w3schools.com/js/js_validation.asp for the basic concepts of data validation
