@@ -116,9 +116,7 @@ renderSalesData();
 renderFooter();
 
 
-//Form
-//----------
-
+//Form to create new store:
 var newStoreData = document.getElementById('newStore');
 newStoreData.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
@@ -127,9 +125,19 @@ function handleSubmit(event) {
   var minCust = event.target.minCust.value;
   var maxCust = event.target.maxCust.value;
   var avgSale = event.target.avgSale.value;
+
+  //remove displayed sales data trs and table footer tr
+  for (let i = 0; i < cookieStoreLocations.length; i++){
+    var tableRow = document.getElementById(cookieStoreLocations[i].location+'Location');
+    tableRow.parentNode.removeChild(tableRow);
+  }
+  var tableRow = document.getElementById('tableFooter');
+  tableRow.parentNode.removeChild(tableRow);
+  //------------------------
+
   new CreateCookieStoreLocation(location, Number(minCust), Number(maxCust), Number(avgSale), 6, 20);
-  renderSalesData();
-// console.log(location, minCust, maxCust, avgSale);
+  renderSalesData(); // re render the sales data with updated cookieStoreLocations
+  renderFooter(); // re render the footer with updated sales data
 }
 
 
