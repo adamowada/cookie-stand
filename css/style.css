@@ -21,14 +21,11 @@ li {
 
 h1 {
   font-size: 3em;
-  margin: 1em;
+  margin: 1em .5em;
   font-weight: bold;
   text-decoration: underline;
-}
-
-h2 {
-  font-size: 2em;
-  margin-left: 1.5em;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .column {
@@ -54,22 +51,25 @@ img {
   width: 60%;
 }
 
-h3 {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 72px;
-  color: white;
-  font-family: sans-serif;
-  font-weight: bold;
-  text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-}
-
 table, th, td {
   border: 1px solid black;
   padding: 5px;
   font-size: 25px;
   background-color: rgba(255, 255, 255, .5);
+}
+
+#newStore {
+  padding: 10px;
+  display: inline-block;
+}
+
+label, button {
+  font-family: 'PT Sans', sans-serif;
+  display: grid;
+  font-size: 25px;
+}
+
+input {
+  font-size: 25px;
+  margin-bottom: 10px;
 }
