@@ -15,7 +15,7 @@ header {
 
 header h1 {
     font-size: 72px;
-    color: black;
+    color: indigo;
     font-weight: bold;
 }
 
@@ -72,4 +72,13 @@ p {
 
 button {
     font-size: 20px;
+}
+
+main * {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #604230;
+}
+
+footer * {
+    color: indigo;
 }
