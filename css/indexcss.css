@@ -1,5 +1,5 @@
 html {
-    background-image: url('/images/logopink.svg');
+    background-image: url("/images/logopink.svg");
     background-size: 40%;
     position: cover;
     font-family: 'PT Sans', sans-serif;
