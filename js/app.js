@@ -174,26 +174,3 @@ function formValidation(location, minCust, maxCust, avgSale) {
   }
   return true;
 }
-
-
-// Store hours extra functionality
-function earliestOpeningStore() {
-  var allOpeningTimes = [];
-  for (var i = 0; i < cookieStoreLocations.length; i++) {
-    allOpeningTimes.push(cookieStoreLocations[i].openAt);
-  }
-  return Math.min(...allOpeningTimes);
-}
-
-function latestOpeningStore() {
-  var allClosingTimes = [];
-  for (var i = 0; i < cookieStoreLocations.length; i++) {
-    allClosingTimes.push(cookieStoreLocations[i].closeAt);
-  }
-  return Math.min(...allClosingTimes);
-}
-
-console.log(earliestOpeningStore(), latestOpeningStore());
-
-
-
