@@ -24,3 +24,4 @@ Thank you to w3schools.com for help with Number.isNaN for data validation in my 
 Thank you to https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger for help with Number.isInteger for data validation in my form
 
 Although I ended up writing my own code, thank you to https://www.w3schools.com/js/js_validation.asp for the basic concepts of data validation
+
